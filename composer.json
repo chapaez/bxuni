@@ -1,6 +1,6 @@
 {
   "name": "bxuni/bxuni",
-  "type": "components",
+  "type": "bitrix-d7-component",
   "description": "useful lightweight components for bitrix",
   "keywords": ["bitrix","components"],
   "homepage": "https://github.com/chapaez/bx_uni",
