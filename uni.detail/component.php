@@ -12,13 +12,17 @@ if(!empty($arr))
 	$arParams['icanwatch']=true;
 else
 	$arParams['icanwatch']=false;	
-if ($this->StartResultCache(false, $id))
+if ($this->StartResultCache(false, serialize($arParams)))
 {
 	if(!CModule::IncludeModule("iblock"))
 		$this->AbortResultCache();
 
-	$filter = array("IBLOCK_CODE"=>$iblock_code, "ID"=>$id, "ACTIVE_DATE"=>"Y","ACTIVE"=>"Y");
-	
+	$filter = array("ACTIVE_DATE"=>"Y","ACTIVE"=>"Y");
+	if($id)
+	    $filter['ID']=$id;
+	if($iblock_code)
+        $filter["IBLOCK_CODE"]=$iblock_code;
+
 	if(is_array($arParams["FILTER"]))
 		$filter = array_merge($filter,$arParams["FILTER"]);
 	
