@@ -96,5 +96,6 @@ $onPage = ($arParams['ONPAGE']) ? $arParams['ONPAGE'] : 9;
 
     }
 
-    $this->IncludeComponentTemplate();
+    $template = $arParams['TEMPLATE'] ?: '';
+    $this->IncludeComponentTemplate($template);
 /*}*/

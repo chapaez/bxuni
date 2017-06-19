@@ -67,8 +67,8 @@ if ($this->StartResultCache(false, serialize($arParams)))
 			$APPLICATION->SetPageProperty('novideo', true);
 	}
 		
-	
-	$this->IncludeComponentTemplate();
+	$template = $arParams['TEMPLATE'] ?: '';
+	$this->IncludeComponentTemplate($template);
 }
 if(isset($arResult["ITEM"]["ID"]))
 	CIBlockElement::CounterInc($arResult["ITEM"]["ID"]);
