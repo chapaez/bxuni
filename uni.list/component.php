@@ -112,5 +112,6 @@ if ($this->StartResultCache(false, serialize($navigation))) {
     if (count($arResult) <= 0)
         $this->AbortResultCache();
 
-    $this->IncludeComponentTemplate();
+    $template = $arParams['TEMPLATE'] ?: '';
+    $this->IncludeComponentTemplate($template);
 }
