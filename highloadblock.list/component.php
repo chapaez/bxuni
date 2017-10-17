@@ -22,7 +22,7 @@ if(!$arParams["CACHE_TIME"])
 	use Bitrix\Main\Entity\ExpressionField;
 	global $CACHE_MANAGER;
 	
-if($this->StartResultCache()){
+if($this->StartResultCache('/'.SITE_ID.$this->GetRelativePath())){
 	// hlblock info
 	$hlblock_id = $arParams['BLOCK_ID'];
 	
